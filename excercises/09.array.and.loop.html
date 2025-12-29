@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+
+    <style>
+        .js-name, .js-date {
+            padding: 10px;
+        }
+        .add {
+            padding: 10px 30px;
+            border: transparent;
+            background: forestgreen;
+            color: #fff;
+            border-radius: 30px;
+        }
+        .heading {
+            background: #333;
+            color: #fff;
+            width: fit-content;
+            padding: 20px;
+        }
+        .showing, .todolist {
+            display: grid;
+            grid-template-columns: 200px 150px 100px;
+            column-gap: 10px;
+            row-gap: 20px;
+            align-items: center;
+        }
+        .todolist {
+            margin-bottom: 10px;
+            align-items: stretch;
+        }
+    </style>
+</head>
+<body>
+    <!--Structure of project-->
+    <h2 class="heading">Todo List</h2>
+    <!--Input product into HTML-->
+    <div class="todolist">
+
+    <input placeholder="Todo name" class="js-name">
+    <input type="date" class="js-date">
+    
+    <!--Add the product in HTML page-->
+    <button class="add js-button" onclick="
+    
+    ">Add</button>
+    <!--To show the result-->
+    </div>
+    <div class="showing"></div>
+
+    <script src="javascript/09.array-and-loops.js"></script>
+</body>
+</html>

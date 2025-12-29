@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance function</title>
+    <style>
+        body {
+            margin: 60px;
+            background: #333;
+        }
+        .js-subscribe {
+            background: #333;
+            padding: 10px 20px;
+            color: #fff;
+            border-radius: 35px;
+            cursor: pointer;
+        }
+        .game1 {
+            background: #333;
+            margin: 30px;
+            position: relative;
+            left: 400px;
+            top: 150px;
+            
+        }
+        .btn {
+            padding: 20px;
+            border-radius: 70px;
+            border: 1px solid #fff;
+            font-size: 50px;
+            margin: 20px;
+            position: relative;
+            right: 30px;
+            background: #333;
+            transition: .4s;
+        }
+        .btn:hover {
+            background: #ffffff25;
+            cursor: pointer;
+        }
+        h2 {
+            color: #fff;
+            font-size: 40px;
+        }
+        .js-show, .scores {
+            font-size: 30px;
+            color: #fff;
+        }
+        .reset-score {
+            background: tomato;
+            padding: 10px 30px;
+            font-size: 20px;
+            border-radius: 35px;
+            color: #fff;
+            border: transparent;
+            cursor: pointer;
+            transition: .4s;
+        }
+        .reset-score:hover {
+            scale: 1.1;
+        }
+        .auto-play {
+            background: seagreen;
+            padding: 10px 30px;
+            font-size: 20px;
+            border-radius: 35px;
+            color: #fff;
+            border: transparent;
+            cursor: pointer;
+            transition: .4s;
+            margin-left: 10px;
+        }
+        .auto-play:hover {
+            scale: 1.1;
+        }
+    </style>
+</head>
+<body>
+    <div class="game">
+        <div class="game1">
+    <h2>Rock Paper Scissor</h2>
+    <button class="js-button1 btn">✊</button>
+    <button class="js-button2 btn">✋</button>
+    <button class="js-button3 btn">✌️</button>
+    <p class="js-show"></p>
+    <p class="scores"></p>
+    <button class="reset-score">Reset Score</button>
+    <p class="confirmMassage"></p>
+    </div>
+    </div>
+
+    <script src="javascript/10.advance-function.js"></script>
+</body>
+</html>

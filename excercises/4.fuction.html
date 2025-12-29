@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <style>
+        p {
+            background: dodgerblue;
+            width: 30%;
+            font-size: 25px;
+            position: relative;
+            left: 50px;
+        }
+        button {
+            background: teal;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 15px;
+            color: #fff;
+            margin: 0 15px;
+            transition: .4s;
+        }
+        button:hover {
+            background: #ffffff78;
+            color: #333;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <!--Use function for Rock-paper-scissor gaming-->
+    <p>Welcome to our page!</p>
+    <button onclick="
+    gaming();
+    playGaming('Rock');
+
+    ">Rock</button>
+    <button onclick="
+    gaming();
+    playGaming('Paper');
+    
+    ">Paper</button>
+    <button onclick="
+    gaming();
+    playGaming('Scissor');
+
+    ">Scissor</button>
+
+
+    <script>
+        // how to do function
+        function welcome () {
+           console.log('Hello, world!');
+        }
+        welcome();
+        function gaming() {
+            const num = Math.random();
+
+            let computerMove = '';
+            if (num > 0 && num < 1 / 3) {
+            computerMove = 'Rock';
+            }
+            else if (num > 1 / 3 && num < 2 / 3) {
+                computerMove = 'Paper';
+            }
+            else if (num > 2 / 3 && num < 1) {
+                computerMove = 'Scissor';
+            }
+
+            // use return to get value from function
+            return computerMove;
+
+            // use return to ignore after it
+            return; 
+            console.log('It will not work after return');
+        }
+
+        // use parameters with function to give value
+        function calculation (tax, taxPercent = 0.1) {
+            console.log(tax * taxPercent);
+        }
+        calculation (2000, 0.2);
+        calculation (2000);
+
+        // use parameters for game
+        function playGaming (playerMove) {
+           const computerMove = gaming();
+           let result = '';
+            if (playerMove === 'Scissor') {
+                if (computerMove === 'Rock') {
+                    result = 'You lose!';
+                }
+                else if (computerMove === 'Paper') {
+                    result = 'You win!';
+                }
+                else if (computerMove === 'Scissor') {
+                    result = 'Tie!';
+                }
+            }
+            if (playerMove === 'Rock') {
+                if (computerMove === 'Rock') {
+                    result = 'Tie';
+                }
+                else if (computerMove === 'Paper') {
+                    result = 'You lose!';
+                }
+                else if (computerMove === 'Scissor') {
+                    result = 'You win!';
+                }
+            }
+            if (playerMove === 'Paper') {
+                if (computerMove === 'Rock') {
+                    result = 'You win!';
+                }
+                else if (computerMove === 'Paper') {
+                    result = 'Tie';
+                }
+                else if (computerMove === 'Scissor') {
+                    result = 'You lose!';
+                }
+
+            }
+            alert (`You pick ${playerMove}. Computer pick ${computerMove}. ${result}`);
+        }
+    </script>
+</body>
+</html>

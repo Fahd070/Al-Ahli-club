@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            padding: 13% 33%;
+        }
+        .header {
+            border: 2px solid #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 25%;
+            background: #333333de;
+            border-radius: 40px;
+            backdrop-filter: blur(30px);
+        }
+        .result {
+            display: flex;
+            justify-content: center;
+        }
+        .beginning {
+            margin: 20px;
+        }
+        button {
+            background: dodgerblue;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 35px;
+            transition: .4s;
+            font-size: 16px;
+            margin: 10px;
+            border: transparent;
+        }
+        button:hover {
+            background: rgba(30, 143, 255, 0.452);
+            scale: 1.1;
+            cursor: pointer;
+            color: #fff;
+        }
+        .welcome {
+            margin-bottom: 10px;
+            margin-top: -20px;
+            color: #fff;
+
+        }
+        .welcome p {
+            margin-left: 30px;
+        }
+        .reset {
+            background-color: tomato;
+        }
+        .reset:hover {
+            background: rgba(255, 99, 71, 0.449);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="welcome">
+        <h2>Welcome to our game</h2>
+        <p>Play head and tails game!</p>
+        </div>
+        <div class="beginning">
+    <button onclick="
+        
+    let computerMove = playGaming('heads');
+
+        
+        ">heads</button>
+    <button onclick="
+    computerMove = playGaming('tails');
+    
+    ">tails</button>
+    </div>
+    <div class="result">
+
+    <button onclick="
+    score.win = 0;
+    score.lose = 0;
+    localStorage.removeItem(score);
+    " class="reset">Reset</button>
+
+    <button onclick="
+    score.win = 0;
+    score.lose = 0;
+    localStorage.removeItem(pastScore, score);
+    ">Reset pastScore</button>
+
+    <button onclick="
+    let result = playGaming(alert);
+    ">Show result</button>
+    </div>
+    </div>
+
+    <script>
+        let score = JSON.parse(localStorage.getItem('score')) || {
+            win: 0,
+            lose: 0
+        };
+
+        let pastScore = localStorage.getItem('score');
+        function playGaming (playerMove) {
+            const guess = Math.random();
+            let computerMove = '';
+
+            if (guess > 0 && guess < 1 / 3) {
+                computerMove = 'heads';
+            }
+            else if (guess > 1 / 3 && guess < 1) {
+                computerMove = 'tails';
+            }
+            let result = '';
+
+            if (playerMove === 'heads') {
+            if (computerMove === 'heads') {
+                result = 'You win!';
+            }
+            else if (computerMove === 'tails') {
+                result = 'You lose!';
+            }
+            }
+            else if (playerMove === 'tails') {
+            if (computerMove === 'heads') {
+                result = 'You lose!';
+            }
+            else if (computerMove === 'tails') {
+                result = 'You win!';
+            }
+            }
+                if (result === 'You win!') {
+                    score.win = score.win + 1;
+                }
+                if (result === 'You lose!') {
+                    score.lose = score.lose + 1;
+                }
+
+                console.log(localStorage.setItem('score', JSON.stringify(score)));
+
+            alert(`You choose ${playerMove}. guess ${computerMove} . result is: ${result} 
+            win: ${score.win} lose: ${score.lose}
+            past score was: ${pastScore}
+            `);
+            return computerMove;
+            return alert(`You choose ${playerMove}. guess ${computerMove} . result is: ${result} 
+            win: ${score.win} lose: ${score.lose}
+            past score was: ${pastScore}
+            `);
+            }
+    </script>
+</body>
+</html>

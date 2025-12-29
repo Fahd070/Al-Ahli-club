@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    padding: 50px 5%;
+    background: url(../img/خلفية\ للتصميم.jpg) no-repeat center / cover;
+    
+}
+.container {
+    position: relative;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .1);
+    border: 2px solid rgba(255, 255, 255, 0.185);
+    border-radius: 35px 30px;
+    backdrop-filter: blur(30px);
+    transform: scale(0);
+    animation: zoom-in 1s ease forwards;
+}
+@keyframes zoom-in {
+    100% {
+        transform: scale(1);
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+.animad {
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slide-in 1s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.logo {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 800;
+    font-size: 2rem;
+    padding: 8px;
+}
+
+nav a {
+    margin: 0 2rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    transition: .5s;
+}
+.hoem-link{
+    border-bottom: 2px solid #fff;
+}
+
+nav a:hover {
+    border-color: #fff;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    gap: 50px;
+    padding: 6rem;
+    color: #fff;
+}
+.text h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+.text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.text p {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.download {
+    display: flex;
+    align-items: center;
+}
+
+.download .home-download {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 0 10px #fff;
+    color: #333;
+    background-color: #fff;
+    transition: .5s;
+}
+.home-download:hover {
+    background: transparent;
+    box-shadow: none;
+    color: #fff;
+}
+.download .social-media a{
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0 1rem;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 20px #fff;
+    transition: .5s;
+}
+.download .social-media a:hover {
+    background: transparent;
+    box-shadow: none;
+    color: #fff;
+}
+
+.home-img .img-box {
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 28vw;
+    height: 28vw;
+    box-shadow: 0 0 20px #fff;
+    overflow: hidden;
+}
+.home-img .img-box img {
+    position: absolute;
+    right: 15px;
+    display: block;
+    object-fit: cover;
+}
+
+
+

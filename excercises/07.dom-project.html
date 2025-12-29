@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom project</title>
+    <style>
+        body {
+            margin: 30px;
+        }
+        button {
+            padding: 10px 30px;
+            background: rgba(0, 119, 238, 0.997);
+            color: #fff;
+            transition: .4s;
+            margin: 10px;
+            border-radius: 35px;
+            border: transparent;
+        }
+        button:hover {
+            background: rgba(30, 143, 255, 0.686);
+            scale: 1.1;
+            cursor: pointer;
+        }
+        .result {color: tomato;}
+    </style>
+</head>
+<body>
+
+    <!--First project-->
+    <h1>First project</h1>
+    <button class="heads" onclick="
+        document.querySelector('.result').innerHTML = `You chose: Heads`;
+        
+        ">Heads</button>
+    <button class="tails" onclick="
+    document.querySelector('.result').innerHTML = `You chose: Tails`;
+    ">Tails</button>
+    <p class="result"></p>
+    <br>
+
+    <!--Second project-->
+    <h1>Second project</h1>
+    <input placeholder="Your name" class="name" onkeydown="
+    
+    if (event.key === 'Enter') {
+        let name = great();
+        if (name) {
+            document.querySelector('.result-name').innerHTML = `Your name is: ${name}`;
+        }
+    }
+    ">
+    <button class="submit" onclick="
+    great();
+    ">Submit</button>
+    <p class="result-name"></p>
+
+
+
+    <!--Third project-->
+    <h1>Third project</h1>
+    <br>
+    <input placeholder="Enter number" class="calcuLator" onkeydown="
+    if (event.key === 'Enter') {
+        let cost = calculator();
+        document.querySelector('.result-math').innerHTML = `$${cost}`;
+    }
+    ">
+    <button onclick="
+    calculator();
+    ">Calculate</button>
+    <p class="result-math"></p>
+
+
+
+    <script>
+        function great () {
+            const text = document.querySelector('.name');
+            const name = text.value;
+            if (name) {
+                document.querySelector('.result-name').innerHTML = `Your name is: ${name}`;
+            }
+        }
+        function calculator () {
+            const orderElement = document.querySelector('.calcuLator');
+            let cost = Number(orderElement.value);
+            if (cost <= 40) {
+             cost = Math.round (cost) + 10;
+            }
+            document.querySelector('.result-math').innerHTML = `$${cost}`;
+            return cost;
+        }
+
+    </script>
+</body>
+</html>

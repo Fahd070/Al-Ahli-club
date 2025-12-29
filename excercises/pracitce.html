@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #container {
+            background: cornflowerblue;
+            width: 250px;
+            height: 100vh;
+        }
+        #container p {
+            padding: 10px;
+            font-size: 40px;
+            color: black;
+        }
+        #container p:hover {
+            background: black;
+            color: white;
+        }
+        button {
+            background: cornflowerblue;
+            color: black;
+            border: none;
+            border-radius: 35px;
+            padding: 10px 30px;
+            font-size: 20px;
+        }
+        button:hover {
+            background: black;
+            color: white;
+        }
+        #close {
+            position: absolute;
+            left: 270px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .images img {
+            width: 200px;
+            height: 200px;
+            border: 5px solid #aaa;
+            margin: 20px;
+            transition: .5s;
+        }
+        .images img:hover {
+            cursor: pointer;
+            background: rgba(15, 15, 15, 0.142);
+        }
+        .main-img img {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            left: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <button class="hide" id="open">Open</button>
+    <button id="close">Close</button>
+    <div id="container">
+        <p>News</p>
+        <p>Sports</p>
+        <p>Funny</p>
+        <p>Shops</p>
+        <p>About</p>
+    </div>
+
+    <input id="txt" type="text" placeholder="put">
+    <button id="click">click</button>
+
+    <br><br>
+    <button onclick="window.location.href = 'https://www.arabianuniversity.ae/';">Click here</button>
+    <input type="text" id="txt1">
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="photos">
+        <div class="images">
+            <img onclick="main.src = this.src" src="../img/Ahli.png" alt="....">
+            <img onclick="main.src = this.src" src="../img/ittifaq.png" alt="....">
+            <img onclick="main.src = this.src" src="../img/Al-hazem.png" alt="....">
+        </div>
+        <div class="main-img">
+            <img src="../img/Ahli.png" name="main" alt="....">
+        </div>
+
+        <div class="images">
+            <img onmouseenter="main.src = this.src" src="../img/Ahli.png" alt="....">
+            <img onmouseenter="main.src = this.src" src="../img/ittifaq.png" alt="....">
+            <img onmouseenter="main.src = this.src" src="../img/Al-hazem.png" alt="....">
+        </div>
+    </div>
+   <script src="javascript/11-practice.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    background: url(../img/plants-8264654_1920.jpg) no-repeat center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 2px solid #3333333a;
+    height: 450px;
+    width: 400px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(3px);
+}
+.input-box {
+    display: grid;
+    gap: 40px;
+}
+.login {
+    color: #333;
+    font-size: 3rem;
+    text-align: center;
+}
+.username input{
+    margin-bottom: 15px;
+    padding: 8px 30px;
+    border-radius: 35px;
+    background: transparent;
+}
+i {
+    position: relative;
+    right:30px;
+}
+.username ::placeholder, .password ::placeholder {
+    color: #333;
+    position: relative;
+    right: 10px;
+    font-size: 16px;
+}
+.password input{
+    margin-bottom: 15px;
+    padding: 8px 30px;
+    border-radius: 35px;
+    background: transparent;
+}
+
+.forget{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.submit button{
+    padding: 10px 70px;
+    border-radius: 35px;
+    background: transparent;
+    color: #333;
+    box-shadow: 0 0 10px #fff;
+    font-size: 1.5rem;
+    position: relative;
+    left: 6px;
+    transition: .5s;
+}
+.submit button:hover {
+    background-color: #ffffff7d;
+    cursor: pointer;
+    transform: scale(1.1);
+}

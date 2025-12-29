@@ -1,0 +1,295 @@
+html {scroll-behavior: smooth;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100%;
+    background: linear-gradient(rgba(38, 130, 38, 0.662), white) no-repeat;
+}
+:root {
+    --line-color: #fff;
+    --line-color2: #333;
+}
+
+/* Header of page */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(38, 130, 38, 0.159);
+    padding: 20px 0;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid #3333333d;
+    box-shadow: 0 1px 5px var(line-color2);
+}
+.image {
+    margin-left: 5rem;
+    cursor: pointer;
+}
+.navber {
+    display: flex;
+    gap: 50px;
+    margin-right: 4rem;
+    font-size: 20px;
+}
+.navber a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.836);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom: 2px solid transparent;
+    transition-duration: 1s;
+    text-shadow: 0 0 10px #333333a9;
+    font-weight: 400;
+}
+.navber a:hover, .navber .home {
+    border-color: var(--line-color);
+}
+
+
+/* Body of page*/
+.logo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    top: 65px;
+}
+.greet {
+    font-size: 40px;
+    width: 600px;
+    line-height: 1.5;
+    color: rgb(30, 29, 29);
+    text-shadow:10px 15px 13px #33333390;
+
+}
+.Ahli-logo {
+    animation: logo 2s infinite;
+}
+::selection {
+    background: #ffffff49;
+}
+.Ahli-fans img{
+    width: 100%;
+    position: relative;
+    bottom: 300px;
+    opacity: .1;
+    border: 1px solid transparent;
+    box-shadow: 0 0 10px 10px rgba(38, 130, 38, 0.662);
+}
+
+
+/* Table of Body */
+table{
+    font-size: 20px;
+    border: 1px solid transparent;
+    border-radius: 35px;
+    padding: 50px;
+    background: #ffffff3f;
+    backdrop-filter: blur(50px);
+    margin: 0 auto;
+}
+td {
+     padding: 50px 20px;
+     border-bottom: 1px solid #3333332b;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+}
+tr {
+    display: flex;
+    justify-content: center;
+
+}
+th {
+    font-size: 2rem;
+    padding: 20px;
+    text-align: center; 
+}
+
+#news {
+    font-size: 20px;
+    border: 1px solid transparent;
+    border-radius: 35px;
+    padding: 20px;
+    background: #ffffff69;
+    backdrop-filter: blur(50px);
+    margin-top: 10rem;
+    width: 50%;
+    position: relative;
+    left: 380px;
+}
+.heading {
+    margin-top: 20px;
+}
+.paragraph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px;
+    border-bottom: 1px solid #3333332b;
+}
+.paragraph img {
+    margin-right: 2rem;
+}
+#news a {
+    text-decoration: none;
+    color: var(--line-color2);
+    transition: .6s;
+    cursor: pointer;
+}
+#news a:hover {
+    background: #34323269;
+    border-radius: 35px;
+    transform: scale(1.1);
+    color: var(--line-color);
+}
+
+/* Footer of page */
+#contact {
+    background: var(--line-color2);
+    position: relative;
+    bottom: 0;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-size: 20px;
+}
+.footer ul li{
+    margin: 30px;
+    list-style-type: none;
+}
+li a {
+    text-decoration: none;
+    color: var(--line-color);
+    border-bottom: 2px solid transparent;
+    transition-duration: 1s;
+    text-shadow: 0 0 10px #333333a9;
+}
+li a:hover {
+    border-color: var(--line-color);
+}
+.copy {
+    font-size: 15px;
+    padding: 20px;
+    text-align: center;
+    color: var(--line-color);
+}
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+}
+.icons i {
+    color: var(--line-color);
+    border: 1px solid #ffffff89;
+    border-radius: 35px;
+    padding: 10px;
+    transition: .4s;
+}
+.icons a {
+    text-decoration: none;
+}
+.icons i:hover {
+    background: #ffffff4b;
+    color: #333;
+}
+
+/* Only animations */
+@keyframes logo {
+    0% {
+        transform: scaleX(-1);
+    }
+    40% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+
+
+/* Size of screen */
+@media (max-width: 650px) {
+    .navber {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 15px;
+        gap: 20px;
+    }
+    .navber a {
+        width: fit-content;
+    }
+    .header {
+        padding: 10px 0;
+    }
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (min-width:650px) and (max-width: 940px) {
+    .logo {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .greet {
+        font-size: 40px;
+        width: 600px;
+        padding: 0 20px;
+    }
+}
+@media (max-width: 649px) {
+    .logo {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .Ahli-logo {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 40px;
+    }
+    .greet {
+        text-align: center;
+        padding: 0 10px;
+        font-size: 30px;
+    }
+}
+@media (max-width: 600px) and (min-width:200px) {
+    .header, #schedule, #news, #contact {
+        flex-wrap: wrap;
+    }
+    #schedule table{
+    font-size: 10px;
+    padding: 10px;
+    }
+    .Ahli-fans img {
+        height: 400px;
+        position: relative;
+        bottom: 470px;
+    }
+    th {
+        font-size: 20px;
+    }
+    tr img {
+        width: 30px;
+        height: 30px;
+    }
+    #contact ul li{
+       font-size: 10px;
+    }
+    #news {
+    font-size: 10px;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    }
+}

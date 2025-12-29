@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week practice</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            background-color: rgb(211, 211, 175);
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem;
+            
+        }
+        .header {
+            background-color: #333;
+            color: aliceblue;
+            width: 70%;
+            text-align: center;
+            box-shadow: 2px 2px 2px #333;
+            border-radius: 15px;
+        }
+        h1 {
+            padding: 0.5rem;
+            font-size: 40px;
+        }
+        p {
+            color: bisque;
+        }
+        .button {
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        button {
+            background-color: #333;
+            color: whitesmoke;
+            border: 3px solid whitesmoke;
+            padding: 0.5rem;
+            box-shadow: 2px 2px 2px #333;
+            border-radius: 15px;
+            font-size: 18px;
+        }
+        .update {
+            background-color: beige;
+            color: #333;
+            border: 3px solid #333;
+            box-shadow: 2px 2px 2px #333;
+        }
+        .playGame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        .rock-paper-scissor {
+            background-color: rgb(9, 68, 128);
+            color: whitesmoke;
+            font-weight: bolder;
+        }
+        .Playing {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: -1rem;
+            margin-top: 0.5rem;
+        }
+        .enter {
+            color: #333;
+            font-weight: bold;
+            font-size: 1.5rem;
+            background-color: wheat;
+            color: #333;
+            border: 3px solid #333;
+            border-radius: 15px;
+            text-align: center;
+            width: 27%;
+            padding: 0.5rem;
+            box-shadow: 2px 2px 2px #333;
+        
+        }
+
+    </style>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <div class="header">
+        <h1>Welcome to our page!</h1>
+        <p>In this page we will share some projects that I learned.</p>
+        </div>
+    </header>
+    <!--Button-->
+    <div class="button">
+    <button onclick="
+        cartQuantity ++;
+        calculate();
+        ">Add to shop</button>
+
+    <button onclick="
+    cartQuantity += 2;
+    calculate();
+    ">+2</button>
+
+    <button onclick="
+    cartQuantity += 5;
+    calculate();
+    ">+5</button>
+
+    <button onclick="
+    cartQuantity -= 1;
+    console.log(`Remove cartQuantity: ${cartQuantity}`);
+    ">Remove</button>
+
+    <button class="update" onclick="
+    if (cartQuantity === 0) {
+        console.log('Not enough');
+        return;
+    }
+    if (cartQuantity <= 10) {
+        console.log('Done');
+        cartQuantity = 0;
+        return;
+    }
+    if (cartQuantity > 10) {
+        console.log('The cart is full');
+        cartQuantity = 0;
+        return;
+    }
+    ">Update</button>
+    </div>
+    <hr>
+    <div class="Playing">
+        <p class="enter">Rock Paper Scissors playing</p>
+    </div>
+   
+    <div class="playGame">
+        <button class="rock-paper-scissor" onclick="
+           playGame();
+            
+            let results = '';
+            if (computerMove === 'Rock') {
+                results = 'Tie';
+            }
+            else if (computerMove === 'Paper') {
+                results = 'You lose!';
+            }
+            else if (computerMove === 'Scissor') {
+                results = 'You win!';
+            }
+
+            console.log(`You picked rock. computer picked ${computerMove}. ${results}`);
+            
+            ">Rock</button>
+
+        <button class="rock-paper-scissor" onclick="
+        playGame();
+         results = '';
+            if (computerMove === 'Rock') {
+                results = 'You win!';
+            }
+            else if (computerMove === 'Paper') {
+                results = 'Tie';
+            }
+            else if(computerMove === 'Scissor') {
+                results = 'You lose!';
+            }
+
+            console.log(`You picked paper. computer picked ${computerMove}. ${results}`);
+        
+        ">Paper</button>
+
+        <button class="rock-paper-scissor" onclick="
+        playGame();
+        results = '';
+            if (computerMove === 'Rock') {
+                results = 'You lose!';
+            }
+            else if (computerMove === 'Paper') {
+                results = 'You win!';
+            }
+            else if(computerMove === 'Scissor') {
+                results = 'Tie';
+            }
+
+            console.log(`You picked Scissor. computer picked ${computerMove}. ${results}`);
+        
+        ">Scissors</button>
+    </div>
+    
+
+    <script>
+        let cartQuantity = 0;
+        function calculate () {
+            console.log(`CartQuantity is: ${cartQuantity}`);
+        }
+        let computerMove = '';
+        function playGame () {
+            let randomNumber = Math.random();
+            
+
+            if (randomNumber >= 0 && randomNumber < 1 /3) {
+                computerMove = 'Rock';
+                return;
+            }
+            if (randomNumber >= 1 /3 && randomNumber < 2/ 3) {
+                computerMove = 'Paper';
+                return;
+            }
+            if (randomNumber >= 2 /3 && randomNumber < 1) {
+                computerMove = 'Scissor';
+                return;
+            }
+        }
+
+    </script>
+</body>
+</html>
